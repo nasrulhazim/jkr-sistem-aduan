@@ -1,16 +1,31 @@
-<?php include 'queries/status-all-states.php'; ?>
+<?php include 'queries/state.php'; ?>
 
 <div class="row pb-3">
 	<div class="col">
 		<div class="float-right">
             <form id="filter" class="form-inline">
+            	<div class="form-group">
+					<label for="state">State: &nbsp;</label>
+					<select class="form-control" 
+						id="state" name="state" 
+						onchange="document.getElementById('filter').submit()">
+						<?php foreach ($states as $table => $label): ?>
+	                    	<option <?php echo $state == $table ? 'selected' : ''; ?> value="<?php echo $table; ?>">
+	                    		<?php echo $label; ?>
+	                    	</option>
+	                    <?php endforeach; ?>
+					</select>
+				</div>
+				&nbsp;
 				<div class="form-group">
-					<label for="year">Tahun: &nbsp;</label>
+					<label for="year">Year: &nbsp;</label>
 					<select class="form-control" 
 						id="year" name="year" 
 						onchange="document.getElementById('filter').submit()">
 						<?php foreach ($years as $y): ?>
-	                    	<option <?php echo $year == $y ? 'selected' : ''; ?> value="<?php echo $y; ?>"><?php echo $y; ?></option>
+	                    	<option <?php echo $year == $y ? 'selected' : ''; ?> value="<?php echo $y; ?>">
+	                    		<?php echo $y; ?>
+	                    	</option>
 	                    <?php endforeach; ?>
 					</select>
 				</div>

@@ -5,8 +5,8 @@
 <div class="container">
 	<div class="card">
 		<div class="card-body">
-			<h5 class="card-title">Status Aduan Tahun <?php echo $_GET['year'] ?? date('Y'); ?> </h5>
-    		<?php include 'modules/tables/status-all-states.php'; ?>
+			<h5 class="card-title">Laporan Aduan <?php echo $states[$state]; ?> Tahun <?php echo $year; ?> </h5>
+    		<?php include 'modules/reports/state.php'; ?>
 		</div>
 	</div>
 </div>
