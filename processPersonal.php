@@ -1,6 +1,7 @@
 <html>
 <head>
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 $name    = $_GET['txtName'];
 $email   = $_GET['txtEmail'];
 $gender  = $_GET['rGender'];
