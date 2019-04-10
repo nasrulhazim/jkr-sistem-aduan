@@ -15,7 +15,7 @@
     };
     var data = {
         datasets: [{
-                data: <?php echo json_encode($count) ?>,
+                data: <?php echo json_encode($count); ?>,
                 backgroundColor: [
                     window.chartColors.red,
                     window.chartColors.yellow,
