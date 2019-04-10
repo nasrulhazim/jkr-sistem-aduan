@@ -10,12 +10,11 @@ Enter a small alphabet<br>
 </form>
 
 <?php
-if ($_GET['txtchar']!=NULL){
-    if ($_GET['txtchar']=='a'){
+if (null != $_GET['txtchar']) {
+    if ('a' == $_GET['txtchar']) {
         echo "The alphabet is 'a'<br>";
-        }
-    else{
-    echo "The alphabet is NOT 'a'<br>";
+    } else {
+        echo "The alphabet is NOT 'a'<br>";
     }
 }
 
