@@ -1,36 +1,37 @@
 <?php
 $year = $_GET['year'] ?? date('Y');
 $states = [
-	'Johor',
-	'Kedah',
-	'Kelantan',
-	'Melaka',
-	'NSembilan',
-	'Pahang',
-	'Perak',
-	'Perlis',
-	'Penang',
-	'PutraJaya',
-	'Sabah',
-	'Sarawak',
-	'Selangor',
-	'Trengganu',
-	'KualaLumpur',
-	'Labuan',
+	'Johor' => 'Johor',
+	'Kedah' => 'Kedah',
+	'Kelantan' => 'Kelantan',
+	'Melaka' => 'Melaka',
+	'NSembilan' => 'Negeri Sembilan',
+	'Pahang' => 'Pahang',
+	'Perak' => 'Perak',
+	'Perlis' => 'Perlis',
+	'Penang' => 'Penang',
+	'Sabah' => 'Sabah',
+	'Sarawak' => 'Sarawak',
+	'Selangor' => 'Selangor',
+	'Trengganu' => 'Terengganu',
+	'KualaLumpur' => 'W.P. Kuala Lumpur',
+	'PutraJaya' => 'W.P. Putrajaya',
+	'Labuan' => 'W.P. Labuan',
 ]; 
 $data = [];
-foreach ($states as $state) {
-	$sql = "select Status as label, count(Status) as count from $state 
+foreach ($states as $key => $value) {
+	$sql = "select Status as label, count(Status) as count from $key 
 	where Status in ('Belum Selesai', 'Dalam Tindakan', 'Selesai') and year(Tarikh) = $year
 	group by Status";
     $rs = mysqli_query($db, $sql);
-    $data[$state] = [];
+    $data[$key] = [];
     while($rec = mysqli_fetch_assoc($rs))
     {
-        $data[$state][$rec['label']] = $rec['count'];
+        $data[$key][$rec['label']] = $rec['count'];
     }
 }
 ?>
+
 <div class="row pb-3">
 	<div class="col">
 		<div class="float-right">
@@ -55,10 +56,10 @@ foreach ($states as $state) {
 		<th>
 			Negeri
 		</th>
-		<th>Belum Selesai</th>
-		<th>Dalam Tindakan</th>
-		<th>Selesai</th>
-		<th>Jumlah</th>
+		<th class="text-center">Belum Selesai</th>
+		<th class="text-center">Dalam Tindakan</th>
+		<th class="text-center">Selesai</th>
+		<th class="text-center">Jumlah</th>
 	</tr>
 <?php 
 	$grand_total = 0;
@@ -75,20 +76,20 @@ foreach ($states as $state) {
 	?>
 	<tr>
 		<td>
-			<?php echo $state; ?>
+			<?php echo $states[$state]; ?>
 		</td>
-		<td><?php echo isset($statuses['Belum Selesai']) ? $statuses['Belum Selesai'] : 0; ?></td>
-		<td><?php echo isset($statuses['Dalam Tindakan']) ? $statuses['Dalam Tindakan'] : 0; ?></td>
-		<td><?php echo isset($statuses['Selesai']) ? $statuses['Selesai'] : 0; ?></td>
-		<td><?php echo $total; ?></td>
+		<td class="text-center"><?php echo isset($statuses['Belum Selesai']) ? $statuses['Belum Selesai'] : 0; ?></td>
+		<td class="text-center"><?php echo isset($statuses['Dalam Tindakan']) ? $statuses['Dalam Tindakan'] : 0; ?></td>
+		<td class="text-center"><?php echo isset($statuses['Selesai']) ? $statuses['Selesai'] : 0; ?></td>
+		<td class="text-center"><?php echo $total; ?></td>
 	</tr>
 <?php endforeach; ?>
 <tr>
 	<th>Total</th>
-	<th><?php echo $grand_total_belum_selesai; ?></th>
-	<th><?php echo $grand_total_dalam_tindakan; ?></th>
-	<th><?php echo $grand_total_selesai; ?></th>
-	<th><?php echo $grand_total_belum_selesai + $grand_total_dalam_tindakan + $grand_total_selesai; ?></th>
+	<th class="text-center"><?php echo $grand_total_belum_selesai; ?></th>
+	<th class="text-center"><?php echo $grand_total_dalam_tindakan; ?></th>
+	<th class="text-center"><?php echo $grand_total_selesai; ?></th>
+	<th class="text-center"><?php echo $grand_total_belum_selesai + $grand_total_dalam_tindakan + $grand_total_selesai; ?></th>
 </tr>
 </table>
 
