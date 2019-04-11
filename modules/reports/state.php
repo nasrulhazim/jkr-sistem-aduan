@@ -219,7 +219,7 @@
 
 		<td class="text-center"><?php echo $value['F']; ?></td>
 		<td class="text-center"><?php echo $value['G']; ?></td>
-		<td class="text-center font-weight-bold"><?php echo $total; ?></td>
+		<td class="text-center font-weight-bold"><?php echo $total + $value['F'] + $value['G']; ?></td>
 	</tr>
 <?php endforeach; ?>
 <?php
