@@ -177,7 +177,7 @@ select
 from
   PLACEHOLDER_STATE
 where
-  year(Tarikh) = PLACEHOLDER_YEAR
+  year(Tarikh) = PLACEHOLDER_YEAR and month(Tarikh) = PLACEHOLDER_MONTH
   and PataOrganisasi in (
     'Pendidikan',
     'Dalam Negeri',

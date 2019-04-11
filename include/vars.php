@@ -1,6 +1,7 @@
 <?php 
 
 $year   = $_GET['year'] ?? date('Y');
+$month  = $_GET['month'] ?? date('m');
 $years  = range(2014, date('Y'));
 $state  = $_GET['state'] ?? 'Selangor';
 $data   = [];

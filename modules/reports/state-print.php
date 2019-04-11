@@ -1,56 +1,8 @@
-<?php include 'queries/state.php'; ?>
 <style type="text/css">
 	.font-size-nine {
 		font-size: 9px;
 	}
 </style>
-<div class="row pb-3">
-	<div class="col">
-		<div class="float-right">
-            <form id="filter" class="form-inline">
-            	<div class="form-group">
-					<label for="state">State: &nbsp;</label>
-					<select class="form-control" 
-						id="state" name="state" 
-						onchange="document.getElementById('filter').submit()">
-						<?php foreach ($states as $table => $label): ?>
-	                    	<option <?php echo $state == $table ? 'selected' : ''; ?> value="<?php echo $table; ?>">
-	                    		<?php echo $label; ?>
-	                    	</option>
-	                    <?php endforeach; ?>
-					</select>
-				</div>
-				&nbsp;
-				<div class="form-group">
-					<label for="year">Year: &nbsp;</label>
-					<select class="form-control" 
-						id="year" name="year" 
-						onchange="document.getElementById('filter').submit()">
-						<?php foreach ($years as $y): ?>
-	                    	<option <?php echo $year == $y ? 'selected' : ''; ?> value="<?php echo $y; ?>">
-	                    		<?php echo $y; ?>
-	                    	</option>
-	                    <?php endforeach; ?>
-					</select>
-				</div>
-				&nbsp;
-				<div class="form-group">
-					<label for="month">Month: &nbsp;</label>
-					<select class="form-control" 
-						id="month" name="month" 
-						onchange="document.getElementById('filter').submit()">
-						<?php foreach (range(1,12) as $m): ?>
-	                    	<option <?php echo $month == $m ? 'selected' : ''; ?> value="<?php echo $m; ?>">
-	                    		<?php echo $m; ?>
-	                    	</option>
-	                    <?php endforeach; ?>
-					</select>
-				</div>
-            </form>
-        </div>
-	</div>
-</div>
-
 <table class="table table-bordered font-size-nine">
 	<tr>
 		<th rowspan="4" class="text-center align-middle">Bil</th>
