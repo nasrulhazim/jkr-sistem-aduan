@@ -2,7 +2,7 @@
 <?php include 'include/connect.php'; ?>
 <?php include 'include/vars.php'; ?>
 
-<div class="container">
+<div class="container-fluid">
 	<div class="card">
 		<div class="card-body">
 			<h5 class="card-title">Laporan Aduan <?php echo $states[$state]; ?> Tahun <?php echo $year; ?> </h5>
