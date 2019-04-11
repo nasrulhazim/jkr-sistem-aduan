@@ -224,12 +224,11 @@
 <?php endforeach; ?>
 <?php
 
-	$grand_total = ($total_a_masa_patuh + $total_a_masa_patuh + $total_a_tindakan_patuh + $total_a_tindakan_tidak_patuh);
-	$grand_total += ($total_b_masa_patuh + $total_b_masa_patuh + $total_b_tindakan_patuh + $total_b_tindakan_tidak_patuh);
-	$grand_total += ($total_c_masa_patuh + $total_c_masa_patuh + $total_c_tindakan_patuh + $total_c_tindakan_tidak_patuh);
-	$grand_total += ($total_d_masa_patuh + $total_d_masa_patuh + $total_d_tindakan_patuh + $total_d_tindakan_tidak_patuh);
-	$grand_total += ($total_e_masa_patuh + $total_e_masa_patuh + $total_e_tindakan_patuh + $total_e_tindakan_tidak_patuh);
-
+	$grand_total = ($total_a_masa_patuh + $total_a_masa_tidak_patuh);
+	$grand_total += ($total_b_masa_patuh + $total_b_masa_tidak_patuh);
+	$grand_total += ($total_c_masa_patuh + $total_c_masa_tidak_patuh);
+	$grand_total += ($total_d_masa_patuh + $total_d_masa_tidak_patuh);
+	$grand_total += ($total_e_masa_patuh + $total_e_masa_tidak_patuh);
 ?>
 <tr class="font-weight-bold">
 		<td class="text-center align-middle" colspan="2">Jumlah Besar</td>
@@ -260,7 +259,7 @@
 		<td class="text-center"><?php echo $total_e_tindakan_tidak_patuh; ?></td>
 
 		<td class="text-center"><?php echo $total_f; ?></td>
-		<td class="text-center"><?php echo $total_f; ?></td>
+		<td class="text-center"><?php echo $total_g; ?></td>
 		<td class="text-center"><?php echo $grand_total; ?></td>
 	</tr>
 </table>

@@ -2,174 +2,174 @@ select
   PataOrganisasi,
   count(
     IF(
-      `JenisKerosakan` = 'Tiada bekalan elektrik pada pepasangan',
+      trim(`JenisKerosakan`) = 'Tiada bekalan elektrik pada pepasangan',
       1,
       NULL
     )
-    and IF(`MasaMaklumbalas` = 'PATUH', 1, NULL)
+    and IF(trim(`MasaMaklumbalas`) = 'PATUH', 1, NULL)
   ) 'AMasaPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Tiada bekalan elektrik pada pepasangan',
+      trim(`JenisKerosakan`) = 'Tiada bekalan elektrik pada pepasangan',
       1,
       NULL
     )
-    and IF(`MasaMaklumbalas` != 'PATUH', 1, NULL)
+    and IF(trim(`MasaMaklumbalas`) != 'PATUH', 1, NULL)
   ) 'AMasaTidakPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Kerosakan pada peralatan seperti: Suis, suis utama MCCB,RCCB, holder dan pengatur.',
+      trim(`JenisKerosakan`) = 'Kerosakan pada peralatan seperti: Suis, suis utama MCCB,RCCB, holder dan pengatur.',
       1,
       NULL
     )
-    and IF(`MasaMaklumbalas` = 'PATUH', 1, NULL)
+    and IF(trim(`MasaMaklumbalas`) = 'PATUH', 1, NULL)
   ) 'BMasaPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Kerosakan pada peralatan seperti: Suis, suis utama MCCB,RCCB, holder dan pengatur.',
+      trim(`JenisKerosakan`) = 'Kerosakan pada peralatan seperti: Suis, suis utama MCCB,RCCB, holder dan pengatur.',
       1,
       NULL
     )
-    and IF(`MasaMaklumbalas` != 'PATUH', 1, NULL)
+    and IF(trim(`MasaMaklumbalas`) != 'PATUH', 1, NULL)
   ) 'BMasaTidakPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Kerosakan pada alat elektrik seperti : Kipas angin, kipas diding, kipas Pelawas, Motor dan accesori',
+      trim(`JenisKerosakan`) = 'Kerosakan pada alat elektrik seperrti : Kipas angin, kipas diding, kipas Pelawas, Motor dan accesori',
       1,
       NULL
     )
-    and IF(`MasaMaklumbalas` = 'PATUH', 1, NULL)
+    and IF(trim(`MasaMaklumbalas`) = 'PATUH', 1, NULL)
   ) 'CMasaPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Kerosakan pada alat elektrik seperti : Kipas angin, kipas diding, kipas Pelawas, Motor dan accesori',
+      trim(`JenisKerosakan`) = 'Kerosakan pada alat elektrik seperrti : Kipas angin, kipas diding, kipas Pelawas, Motor dan accesori',
       1,
       NULL
     )
-    and IF(`MasaMaklumbalas` != 'PATUH', 1, NULL)
+    and IF(trim(`MasaMaklumbalas`) != 'PATUH', 1, NULL)
   ) 'CMasaTidakPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Lampu Jalan, Lampu Kawasan, Lampu Limpah',
+      trim(`JenisKerosakan`) = 'Lampu Jalan, Lampu Kawasan, Lampu Limpah',
       1,
       NULL
     )
-    and IF(`MasaMaklumbalas` = 'PATUH', 1, NULL)
+    and IF(trim(`MasaMaklumbalas`) = 'PATUH', 1, NULL)
   ) 'DMasaPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Lampu Jalan, Lampu Kawasan, Lampu Limpah',
+      trim(`JenisKerosakan`) = 'Lampu Jalan, Lampu Kawasan, Lampu Limpah',
       1,
       NULL
     )
-    and IF(`MasaMaklumbalas` != 'PATUH', 1, NULL)
+    and IF(trim(`MasaMaklumbalas`) != 'PATUH', 1, NULL)
   ) 'DMasaTidakPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Servis ACB/OCB, Janakuasa dan Kerja-kerja senggara ke atas kabel bawah tanah dan talian atas (Voltan rendah)',
+      trim(`JenisKerosakan`) = 'Servis ACB/OCB, Janakuasa dan Kerja-kerja senggara ke atas kabel bawah tanah dan talian atas (Voltan rendah)',
       1,
       NULL
     )
-    and IF(`MasaMaklumbalas` = 'PATUH', 1, NULL)
+    and IF(trim(`MasaMaklumbalas`) = 'PATUH', 1, NULL)
   ) 'EMasaPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Servis ACB/OCB, Janakuasa dan Kerja-kerja senggara ke atas kabel bawah tanah dan talian atas (Voltan rendah)',
+      trim(`JenisKerosakan`) = 'Servis ACB/OCB, Janakuasa dan Kerja-kerja senggara ke atas kabel bawah tanah dan talian atas (Voltan rendah)',
       1,
       NULL
     )
-    and IF(`MasaMaklumbalas` != 'PATUH', 1, NULL)
+    and IF(trim(`MasaMaklumbalas`) != 'PATUH', 1, NULL)
   ) 'EMasaTidakPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Tiada bekalan elektrik pada pepasangan',
+      trim(`JenisKerosakan`) = 'Tiada bekalan elektrik pada pepasangan',
       1,
       NULL
     )
-    and IF(`TindakanPembaikan` = 'PATUH', 1, NULL)
+    and IF(trim(`TindakanPembaikan`) = 'PATUH', 1, NULL)
   ) 'ATindakanPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Tiada bekalan elektrik pada pepasangan',
+      trim(`JenisKerosakan`) = 'Tiada bekalan elektrik pada pepasangan',
       1,
       NULL
     )
-    and IF(`TindakanPembaikan` != 'PATUH', 1, NULL)
+    and IF(trim(`TindakanPembaikan`) != 'PATUH', 1, NULL)
   ) 'ATindakanTidakPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Kerosakan pada peralatan seperti: Suis, suis utama MCCB,RCCB, holder dan pengatur.',
+      trim(`JenisKerosakan`) = 'Kerosakan pada peralatan seperti: Suis, suis utama MCCB,RCCB, holder dan pengatur.',
       1,
       NULL
     )
-    and IF(`TindakanPembaikan` = 'PATUH', 1, NULL)
+    and IF(trim(`TindakanPembaikan`) = 'PATUH', 1, NULL)
   ) 'BTindakanPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Kerosakan pada peralatan seperti: Suis, suis utama MCCB,RCCB, holder dan pengatur.',
+      trim(`JenisKerosakan`) = 'Kerosakan pada peralatan seperti: Suis, suis utama MCCB,RCCB, holder dan pengatur.',
       1,
       NULL
     )
-    and IF(`TindakanPembaikan` != 'PATUH', 1, NULL)
+    and IF(trim(`TindakanPembaikan`) != 'PATUH', 1, NULL)
   ) 'BTindakanTidakPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Kerosakan pada alat elektrik seperti : Kipas angin, kipas diding, kipas Pelawas, Motor dan accesori',
+      trim(`JenisKerosakan`) = 'Kerosakan pada alat elektrik seperrti : Kipas angin, kipas diding, kipas Pelawas, Motor dan accesori',
       1,
       NULL
     )
-    and IF(`TindakanPembaikan` = 'PATUH', 1, NULL)
+    and IF(trim(`TindakanPembaikan`) = 'PATUH', 1, NULL)
   ) 'CTindakanPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Kerosakan pada alat elektrik seperti : Kipas angin, kipas diding, kipas Pelawas, Motor dan accesori',
+      trim(`JenisKerosakan`) = 'Kerosakan pada alat elektrik seperrti : Kipas angin, kipas diding, kipas Pelawas, Motor dan accesori',
       1,
       NULL
     )
-    and IF(`TindakanPembaikan` != 'PATUH', 1, NULL)
+    and IF(trim(`TindakanPembaikan`) != 'PATUH', 1, NULL)
   ) 'CTindakanTidakPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Lampu Jalan, Lampu Kawasan, Lampu Limpah',
+      trim(`JenisKerosakan`) = 'Lampu Jalan, Lampu Kawasan, Lampu Limpah',
       1,
       NULL
     )
-    and IF(`TindakanPembaikan` = 'PATUH', 1, NULL)
+    and IF(trim(`TindakanPembaikan`) = 'PATUH', 1, NULL)
   ) 'DTindakanPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Lampu Jalan, Lampu Kawasan, Lampu Limpah',
+      trim(`JenisKerosakan`) = 'Lampu Jalan, Lampu Kawasan, Lampu Limpah',
       1,
       NULL
     )
-    and IF(`TindakanPembaikan` != 'PATUH', 1, NULL)
+    and IF(trim(`TindakanPembaikan`) != 'PATUH', 1, NULL)
   ) 'DTindakanTidakPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Servis ACB/OCB, Janakuasa dan Kerja-kerja senggara ke atas kabel bawah tanah dan talian atas (Voltan rendah)',
+      trim(`JenisKerosakan`) = 'Servis ACB/OCB, Janakuasa dan Kerja-kerja senggara ke atas kabel bawah tanah dan talian atas (Voltan rendah)',
       1,
       NULL
     )
-    and IF(`TindakanPembaikan` = 'PATUH', 1, NULL)
+    and IF(trim(`TindakanPembaikan`) = 'PATUH', 1, NULL)
   ) 'ETindakanPatuh',
   count(
     IF(
-      `JenisKerosakan` = 'Servis ACB/OCB, Janakuasa dan Kerja-kerja senggara ke atas kabel bawah tanah dan talian atas (Voltan rendah)',
+      trim(`JenisKerosakan`) = 'Servis ACB/OCB, Janakuasa dan Kerja-kerja senggara ke atas kabel bawah tanah dan talian atas (Voltan rendah)',
       1,
       NULL
     )
-    and IF(`TindakanPembaikan` != 'PATUH', 1, NULL)
+    and IF(trim(`TindakanPembaikan`) != 'PATUH', 1, NULL)
   ) 'ETindakanTidakPatuh',
   count(
     IF(
-      `Kategori Kerja` = 'Pemasangan sementara dan tunggu sedia atau tugas khas',
+      trim(`Kategori Kerja`) = 'Pemasangan sementara dan tunggu sedia atau tugas khas',
       1,
       NULL
     )
   ) 'F',
   count(
     IF(
-      `Kategori Kerja` = 'Semakan ke atas pasangan / pendawaian (general check-up)',
+      trim(`Kategori Kerja`) = 'Semakan ke atas pasangan / pendawaian (general check-up)',
       1,
       NULL
     )
