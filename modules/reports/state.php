@@ -176,7 +176,7 @@
 	?>
 	<tr>
 		<td class="text-center"><?php echo $number; $number++; ?></td>
-		<td class="text-center"><?php echo $value['PataOrganisasi']; ?></td>
+		<td><?php echo $value['PataOrganisasi']; ?></td>
 		
 		<td class="text-center"><?php echo $value['AMasaPatuh']; ?></td>
 		<td class="text-center"><?php echo $value['AMasaTidakPatuh']; ?></td>
