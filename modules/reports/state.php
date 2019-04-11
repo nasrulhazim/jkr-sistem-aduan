@@ -39,6 +39,7 @@
 					<select class="form-control" 
 						id="month" name="month" 
 						onchange="document.getElementById('filter').submit()">
+							<option <?php echo $month == 'all' ? 'selected' : ''; ?> value="all">All</option>
 						<?php foreach (range(1,12) as $m): ?>
 	                    	<option <?php echo $month == $m ? 'selected' : ''; ?> value="<?php echo $m; ?>">
 	                    		<?php echo $m; ?>
