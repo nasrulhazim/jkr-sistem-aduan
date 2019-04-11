@@ -5,7 +5,10 @@
 <div class="container-fluid">
 	<div class="card">
 		<div class="card-body">
-			<h5 class="card-title">Laporan Aduan <?php echo $states[$state]; ?> Tahun <?php echo $year; ?> </h5>
+			<h5 class="card-title">
+				<?php $date = date_create(($year . ($month != 'all' ? '-' . $month : ''))); ?>
+				Laporan Aduan <?php echo $states[$state]; ?> <?php echo date_format($date,"M Y"); ?>
+			</h5>
 			<!-- <div id="pdf" class="float-right btn btn-sm btn-danger">PDF</div> -->
     		<?php include 'modules/reports/state.php'; ?>
 		</div>

@@ -5,7 +5,10 @@
 <div class="container-fluid">
 	<div class="card">
 		<div class="card-body">
-			<h5 class="card-title">Laporan Aduan Tahun <?php echo $year; ?> </h5>
+			<h5 class="card-title">
+				<?php $date = date_create(($year . ($month != 'all' ? '-' . $month : ''))); ?>
+				Laporan Aduan <?php echo date_format($date,"M Y"); ?>
+			</h5>
     		<?php include 'modules/reports/overall.php'; ?>
 		</div>
 	</div>
