@@ -182,11 +182,11 @@
 		$total_g += $value['G'];
 	?>
 	<?php 
-		$total = $value['AMasaPatuh'] + $value['AMasaTidakPatuh'] + $value['ATindakanPatuh'] + $value['ATindakanTidakPatuh'];
-		$total += $value['BMasaPatuh'] + $value['BMasaTidakPatuh'] + $value['BTindakanPatuh'] + $value['BTindakanTidakPatuh'];
-		$total += $value['CMasaPatuh'] + $value['CMasaTidakPatuh'] + $value['CTindakanPatuh'] + $value['CTindakanTidakPatuh'];
-		$total += $value['DMasaPatuh'] + $value['DMasaTidakPatuh'] + $value['DTindakanPatuh'] + $value['DTindakanTidakPatuh'];
-		$total += $value['EMasaPatuh'] + $value['EMasaTidakPatuh'] + $value['ETindakanPatuh'] + $value['ETindakanTidakPatuh'];
+		$total = $value['AMasaPatuh'] + $value['AMasaTidakPatuh'];
+		$total += $value['BMasaPatuh'] + $value['BMasaTidakPatuh'];
+		$total += $value['CMasaPatuh'] + $value['CMasaTidakPatuh'];
+		$total += $value['DMasaPatuh'] + $value['DMasaTidakPatuh'];
+		$total += $value['EMasaPatuh'] + $value['EMasaTidakPatuh'];
 	?>
 	<tr>
 		<td class="text-center"><?php echo $number; $number++; ?></td>
@@ -219,12 +219,12 @@
 
 		<td class="text-center"><?php echo $value['F']; ?></td>
 		<td class="text-center"><?php echo $value['G']; ?></td>
-		<td class="text-center font-weight-bold"><?php echo $total + $value['F'] + $value['G']; ?></td>
+		<td class="text-center font-weight-bold"><?php echo $total; ?></td>
 	</tr>
 <?php endforeach; ?>
 <?php
-
-	$grand_total = ($total_a_masa_patuh + $total_a_masa_tidak_patuh);
+	$grand_total = 0;
+	$grand_total += ($total_a_masa_patuh + $total_a_masa_tidak_patuh);
 	$grand_total += ($total_b_masa_patuh + $total_b_masa_tidak_patuh);
 	$grand_total += ($total_c_masa_patuh + $total_c_masa_tidak_patuh);
 	$grand_total += ($total_d_masa_patuh + $total_d_masa_tidak_patuh);
